@@ -8,6 +8,7 @@
 body{
     color: #ededed;
     background-color: #160529;
+    overflow-x: hidden;
 }
 .header{
     position: fixed;
@@ -176,7 +177,7 @@ body{
     padding: 70px 5%;
 }
 .home-content h3{
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 700;
     opacity: 0;
     animation: slideBottom 1s ease forwards;
@@ -204,6 +205,7 @@ body{
     font-size: 20px;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
+    word-wrap: break-word;
 }
 .home-sci a{
     display: inline-flex;
@@ -299,9 +301,15 @@ body{
 /* Responsive Styles */
 @media screen and (max-width: 1200px) {
     .home-div {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
     }
-
+    .home {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
     .img-div {
         width: 250px;
         height: 250px;
@@ -339,6 +347,21 @@ body{
     .img-div {
         display: none; /* Ensure image remains hidden on very small screens */
     }
+    
+}
+
+h1 {
+  font-size: clamp(24px, 5vw, 56px); /* scales with screen size */
+}
+h3, p {
+  font-size: clamp(14px, 2.5vw, 20px);
+}
+
+.home, .contact {
+  min-height: 100vh; /* Use min-height instead of fixed height */
+  height: auto;
+  padding-top: 40px; /* Add top padding to account for fixed header */
+  padding-bottom: 20px;
 }
 
 .about {
@@ -383,8 +406,8 @@ body{
 
 .sub-title{
     text-align: center;
-    font-size: 50px;
-    padding-bottom: 70px;
+    font-size: 48px;
+    padding-bottom: 50px;
 }
 .sub-title span{
     color: #0ef;
@@ -426,7 +449,7 @@ section{
     align-items: center;
     text-align: center;
     gap: 10px;
-    padding: 10px 100px;
+    padding: 10px 60px;
 }
 
 .skills-container > div {
@@ -497,6 +520,9 @@ section{
     .skills-container > div {
         flex: 1 0 45%; /* 2 items per row on medium screens */
     }
+    .skills-container {
+    padding: 10px 20px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -526,7 +552,7 @@ section{
 }
 
 .main-text h2{
-    font-size: 50px;
+    font-size: 48px;
     line-height: 1;
     text-align: center;
     padding-bottom: 25px;
@@ -539,7 +565,7 @@ section{
 
 .portfolio-content{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Adjusting grid layout for better spacing */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusting grid layout for better spacing */
     gap: 20px; /* Adding a bit of space between items */
     padding: 50px;
 }
@@ -623,7 +649,7 @@ section{
     justify-content: center;  /* Horizontally centers the content */
     align-items: center;  /* Vertically centers the content */
     text-align: justify;  /* Ensures text is centered */
-    margin-top: 65px;  /* Margin from the top (you can adjust this value as needed) */
+    margin-top: 35px;  /* Margin from the top (you can adjust this value as needed) */
     height: 100vh;  /* Ensures the section takes the full height of the viewport */
 }
 
@@ -633,7 +659,7 @@ section{
 }
 
 .contact-text h2 {
-    font-size: 50px;
+    font-size: 48px;
     line-height: 1;
     margin-bottom: 50px;
     margin-top: -50px;
@@ -729,7 +755,7 @@ section{
     padding: 25px 0;
     background: #1c0035;
     font-weight: 300;
-    margin-top: 70px;
+    margin-top: 30px;
 }
 .top{
     position: fixed;
